@@ -1,0 +1,39 @@
+.dashboard-container > table,
+tr {
+  border: 2px solid #000;
+}
+
+.dashboard-container > table {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.dashboard-container > table > thead > th:last-of-type {
+  text-align: right;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-wrapper > svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.checkbox-wrapper > svg:hover {
+  cursor: pointer;
+}
+
+.delete-btn {
+  margin-left: auto;
+  width: 20%;
+  height: 4rem;
+  border: none;
+  background-color: #ee1f1f;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 2rem;
+}

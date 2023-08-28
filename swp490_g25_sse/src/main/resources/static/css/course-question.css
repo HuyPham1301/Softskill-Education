@@ -1,0 +1,36 @@
+.bg-w {
+  background-color: #fff;
+}
+.question-from {
+  padding: 6rem;
+}
+
+.question {
+  font-size: 3rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 5rem;
+}
+.title span {
+  color: red;
+}
+.input {
+  font-size: 2rem;
+  width: 100%;
+  background-color: #e5e5e5;
+  border: none;
+  padding: 1rem;
+}
+.ck-editor__editable {
+  min-height: 300px;
+  font-size: 2rem;
+}
+.submit {
+  margin-top: 5rem;
+  padding: 0 1rem;
+  font-size: 2rem;
+  display: block;
+  margin-left: auto;
+}

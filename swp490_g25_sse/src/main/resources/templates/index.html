@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/home-screen.css" />
+  <link rel="stylesheet" href="/css/course-screen.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar1">
+      <ul class="nav-list">
+        <li class="item"><a href="/"><img src="images\Logo.png" width="65%" style="border-radius: 77px;"/></a></li>        
+        <th:block th:switch="${user}">
+          <th:block th:case="'teacher'">
+              <li class="item"><a href="/app/teacher/">Khóa học</a></li>            
+          </th:block>
+        </th:block>
+        <th:block th:switch="${user}">
+          <th:block th:case="'student'">
+              <li class="item"><a href="/app/student/">Khóa học</a></li>            
+          </th:block>
+        </th:block>
+        <li class="item">
+          <div class="input-nav-group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>            
+          </div>
+          <div class="button-group">
+            <th:block th:switch="${user}">
+              <th:block th:case="'teacher'">
+                <a href="/logout" class="btn1 btn-signup">Đăng xuất</a>
+              </th:block>
+              <th:block th:case="'student'">
+                <a href="/logout" class="btn1 btn-signup">Đăng xuất</a>
+              </th:block>
+              <th:block th:case="'anonymousUser'">
+                <a href="/registration" class="btn1 btn-signup">Đăng ký</a>
+              </th:block>
+            </th:block>
+            <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon signup" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="Welcome">
+    <div class="row row-0 justify-content-between welcome-wrapper">
+      <div class="welcome-detail col-5">
+        <div class="col-12 pl-0">
+          <div class="Welcome_title">
+            <p>
+              Welcome to <br />
+              Soft Skill Education
+            </p>
+          </div>
+        </div>
+        <div class="col-8 pl-0">
+          <div class="Welcome_Content mt-5 mb-5">
+            <p>
+              Với rất nhiều nội dung học tập theo yêu cầu và trực tiếp miễn
+              phí cho mọi cấp độ trải nghiệm, bạn sẽ tìm thấy những gì bạn cần
+              để đạt được mục tiêu của mình. Đăng nhập để theo dõi tiến trình
+              của bạn, kiếm huy hiệu, lưu trữ nội dung học tập và nhiều tính
+              năng khác đang chờ bạn.
+            </p>
+          </div>
+        </div>
+        <div class="col-5 pl-0">
+          <div class="item">
+            <th:block th:switch="${user}">
+              <th:block th:case="'anonymousUser'">
+                <div class="button-group">
+                  <a href="/login" class="btn1 btn-signup">Đăng nhập</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon course" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </th:block>
+            </th:block>          
+          </div>
+        </div>
+      </div>
+
+
+      <div class="welcome-image-list col-6">
+        <div class="row row-0 row1 ">
+          <img src="/images/row1-1.png" class="Welcome_img m-2" />
+          <img src="/images/row1-2.png" class="Welcome_img m-2" />
+          <img src="/images/row1-3.png" class="Welcome_img m-2" />
+        </div>
+        <div class="row row-0 row2 ">
+          <img src="/images/row2-1.png" class="Welcome_img m-2" />
+          <img src="/images/row2-2.png" class="Welcome_img m-2" />
+          <img src="/images/row2-3.png" class="Welcome_img m-2" />
+        </div>
+        <div class="row row-0 row3">
+          <img src="/images/row3-1.png" class="Welcome_img m-2" />
+          <img src="/images/row3-2.png" class="Welcome_img m-2" />
+          <img src="/images/row3-3.png" class="Welcome_img m-2" />
+        </div>
+        <div class="row row-0 row4 ">
+          <img src="/images/row4-1.png" class="Welcome_img m-2" />
+          <img src="/images/row4-2.png" class="Welcome_img m-2" />
+          <img src="/images/row4-3.png" class="Welcome_img m-2" />          
+        </div>
+        <div class="row row-0 row5">          
+          <img src="/images/row4-4.png" class="Welcome_img m-2" />
+          <img src="/images/row5-2.png" class="Welcome_img m-2" />
+          <img src="/images/row5-3.png" class="Welcome_img m-2" />
+        </div>
+      </div>
+    </div>
+
+    <div class="Intro mt-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="Intro_Title mb-5">
+            <p>
+              Kỹ năng mềm <br />
+              là kỹ năng thiết yếu không thể thiếu
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 Intro_Title">
+          <img src="/images/intro.jpg" class="Intro_img" />
+        </div>
+
+        <div class="col-6">
+          <div class="Intro_part">
+            <div class="row">
+              <div class="col-1">
+                <img src="/images/img1.png" />
+              </div>
+              <div class="col-11">
+                <div class="Intro_part_title">
+                  <p>Kỹ năng mềm là gì?</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="Intro_part_content mt-4 mb-5">
+                  <p>
+                    Kỹ năng mềm là việc vận dụng kiến thức, kinh nghiệm đã có
+                    một cách linh hoạt, mềm dẻo trong quá trình giải quyết những
+                    tình huống, công việc cụ thể. Kỹ năng mềm nói chung để chỉ
+                    hàng loạt hành vi, kỹ thuật mang tính chất cá nhân nhằm mục
+                    đích tạo thiện cảm cho người đối diện trong quá trình triển
+                    khai, giải quyết công việc.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Intro_part">
+            <div class="row">
+              <div class="col-1">
+                <img src="/images/img2.png" />
+              </div>
+              <div class="col-11">
+                <div class="Intro_part_title">
+                  <p>Lợi ích của kỹ năng mềm là gì?</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="Intro_part_content mt-4 mb-5">
+                  <p>
+                    Kỹ năng mềm cho phép bạn giải quyết các vấn đề phát sinh 
+                    một cách nhanh chóng và hiệu quả. Đôi khi có những công 
+                    việc mà kỹ năng chuyên môn của bạn không thể giải quyết 
+                    được. Nhưng nhờ việc phân tích vấn đề, xử lý tình huống, 
+                    kết nối mọi người và hàng loạt các kỹ năng liên quan mà 
+                    vấn đề được xử lý.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Intro_part">
+            <div class="row">
+              <div class="col-1">
+                <img src="/images/img3.png" />
+              </div>
+              <div class="col-11">
+                <div class="Intro_part_title">
+                  <p>Tại sao bạn phải học kỹ năng mềm thông qua chúng tôi?</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="Intro_part_content mt-4 mb-5">
+                  <p>
+                    Soft skill education là hệ một hệ thống bao gồm các bài 
+                    giảng tốt nhất dành cho bạn, giúp bạn nâng cao kỹ năng mềm
+                    của chính mình để mở ra nhiều cơ hội việc làm hơn trong tương 
+                    lai.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Roadmap">
+      <div class="row">
+        <div class="col-12 p-0">
+          <div class="Roadmap_title mt-5 mb-5">
+            <p>Lộ trình học tập để trở nên tuyệt vời hơn</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="roadmap-item col-4 p-0">
+          <div class="Roadmap_part">
+            <div class="Roadmap_part_img">
+              <img src="images/register.jpg" />
+            </div>
+            <div class="number-step">1</div>
+            <div class="Roadmap_part_title">
+              <p>Đăng ký tài khoản</p>
+            </div>
+            <div class="Roadmap_part_content">
+              <p>Đăng ký tài khoản để tham gia khóa học</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap-item col-4  p-0">
+          <div class="Roadmap_part">
+            <div class="Roadmap_part_img">
+              <img src="images/enroll.jpg" />
+            </div>
+            <div class="number-step">2</div>
+            <div class="Roadmap_part_title">
+              <p>Tham gia khóa học</p>
+            </div>
+            <div class="Roadmap_part_content">
+              <p>Bắt đầu các khóa học dành riêng cho bạn</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap-item col-4  p-0">
+          <div class="Roadmap_part">
+            <div class="Roadmap_part_img">
+              <img src="images/finish.png" />
+            </div>
+            <div class="number-step">3</div>
+            <div class="Roadmap_part_title">
+              <p>Hoàn thành khóa học</p>
+            </div>
+            <div class="Roadmap_part_content">
+              <p>Hoàn thành khóa học của bạn và theo dõi sự tiến bộ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="TopCourses">
+      <div class="row row-0 align-items-center">
+        <div class="col-2">
+          <div class="TopCourses_title">
+            <p>Top khóa học hấp dẫn</p>
+          </div>
+        </div>
+        <div class="col-10 Courses">
+          <div class="row">
+            <!-- <th:block th:each="course : ${courses}">
+              <div class="col-3">
+                <div class="Course">
+                  <img th:src="${course.imageUrl}" class="Course_img" />
+                  <div class="Course_Content pl-4">
+                    <div class="Couse_author pt-4"
+                      th:text="${course.teacher.user.firstName} + ' ' + ${course.teacher.user.lastName}">
+
+                    </div>
+                    <div class="Course_Title pb-2" th:utext="${course.title}">
+                    </div> -->
+            <!-- <div class="Course_Length pt-4 pb-3">
+                      <div class="icon"></div>
+                      <div class="length">
+                        <p>33 minutos</p>
+                      </div>
+                    </div> -->
+            <!-- </div>
+                </div>
+              </div>
+            </th:block> -->
+            <div class="course-list">
+              <th:block th:each="course : ${courses}">
+                <a th:href="@{/app/student/course/{id}(id=${course.id})}">
+                  <div class="course-card">
+                    <div class="course-card-img">
+                      <img th:src="${course.courseImgUrl}" class="course-img" />
+                    </div>
+                    <div class="course-card-owner-img">
+                      <img th:src="${course.teacher.user.imageURL}" class="owner-img" />
+                    </div>
+                    <div class="course-detail">
+                      <div class="owner-name" id="owner-name"
+                        th:text="${course.teacher.user.firstName} + ' ' + ${course.teacher.user.lastName}"></div>
+                      <p class="course-name" th:utext="${course.courseTitle}"></p>
+                      <div class="course-views">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="views-icon" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span class="view-amount" th:text="${course?.totalEnrolls + ' Lượt học'}"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </th:block>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer row row-0 align-items-center">
+      <div class="footer-des col-6">
+        <a href="/" class="footer-logo"><img src="images\Logo.png" width="20%" style="border: 1px solid; border-radius: 77px;"/></a>
+        <p class="footer-des-detail">
+          Soft skill là nền tảng học trực tuyến giúp <br/>mọi người nâng cao kỹ năng mềm
+        </p>
+        <div class="social-list">
+          <img class="footer-img" src="/images/facebook-logo.png">
+          <img class="footer-img" src="/images/youtube-logo.png">
+          <img class="footer-img" src="/images/tweeter-logo.png">
+          <img class="footer-img" src="/images/insta-logo.png">
+        </div>
+      </div>
+      <div class="footer-links col-6">
+        <p class="footer-main-links links">LIÊN KẾT</p>
+        <p class="footer-main-links links">THÔNG TIN</p>
+        <p class="footer-main-links links">TRỢ GIÚP</p>
+        <a href="#" class="footer-link links">Khóa học</a>
+        <a href="#" class="footer-link links">Chia sẻ</a>
+        <a href="#" class="footer-link links">Hỗ trợ</a>
+        <a href="#" class="footer-link links">Giáo viên</a>
+        <a href="#" class="footer-link links">Về chúng tôi</a>
+        <a href="#" class="footer-link links">Liên hệ</a>
+        <a href="#" class="footer-link links">Học sinh</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

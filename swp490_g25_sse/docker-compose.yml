@@ -1,0 +1,31 @@
+version: "3"
+services:
+  db:
+    env_file:
+      - ".env"
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    command: [ "/opt/mssql/bin/sqlservr" ]
+
+  server:
+    build: .
+    command: mvn spring-boot:run
+    volumes:
+      - .:/server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - redis
+    env_file:
+      - ".env"
+    tty: true
+    stdin_open: true
+
+  redis:
+    image: "redis"
+    network_mode: "host"
+    command: redis-server
+  # volumes:
+  # - .:/data

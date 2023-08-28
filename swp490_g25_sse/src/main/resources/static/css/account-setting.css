@@ -1,0 +1,160 @@
+.main-dashboard .account-setting {
+  padding: 6rem 6rem;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  text-align: left;
+}
+
+.main-setting {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.main-setting .setting-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-setting .setting-avatar>img {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+}
+
+.main-setting .setting-name {
+  font-size: 2.4rem;
+  color: #241334;
+}
+
+.main-setting .settings {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.settings .setting-icon {
+  width: 4.9rem;
+  height: 4.9rem;
+}
+
+.settings .setting-tag {
+  text-decoration: none;
+  font-size: 2.4rem;
+  color: #241334;
+}
+
+.setting-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.detail-header {
+  font-size: 3.6rem;
+}
+
+.text-input {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.text-input>label {
+  font-size: 2.4rem;
+}
+
+.text-input>input {
+  width: 100%;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  background-color: #e5e5e5;
+  font-size: 2.4rem;
+}
+
+.double-input {
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+}
+
+.button-control {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.button-control .save,
+.button-control .cancel {
+  width: 20%;
+  height: 6rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 2.2rem;
+}
+
+.button-control .save {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.button-control .cancel {
+  background-color: #fff;
+  color: var(--primary-color);
+}
+
+.button-control .save:hover,
+.button-control .cancel:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-info {
+  margin-top: 3rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.progress-wrapper {
+  width: 85%;
+  height: auto;
+}
+
+#progressbar {
+  background-color: black;
+  border-radius: 13px;
+  /* (height of inner div) / 2 + padding */
+  padding: 3px;
+}
+
+#progressbar>div {
+  background-color: var(--primary-color);
+  width: 50%;
+  /* Adjust with JavaScript */
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 700;
+  padding-right: 2rem;
+}
+
+/* #progressbar>div>span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+} */

@@ -1,0 +1,204 @@
+.Welcome {
+  padding: 2rem 0;
+}
+
+.welcome-wrapper {
+  overflow: hidden;
+  padding-bottom: 30rem;
+}
+
+.Intro {
+  padding: 2rem 4rem;
+}
+
+.welcome-detail {
+  margin-left: 2.5rem;
+}
+
+.Welcome_title {
+  color: var(--primary-color);
+  font-size: 5rem;
+}
+
+.Welcome_title p {
+  margin-bottom: 0 !important;
+  font-weight: bold;
+}
+
+.Welcome_Content {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.Welcome_login,
+.btn-icon.signup.Welcome_login {
+  color: var(--primary-color);
+  background-color: #fff;
+}
+.Welcome_img {
+  width: 222px;
+  height: 100px;
+  border-radius: 1.5rem;
+}
+
+.welcome-image-list {
+  position: relative;
+}
+
+.row1 {
+  position: absolute;
+  top: 0;
+  right: -6rem;
+}
+
+.row2 {
+  position: absolute;
+  top: 12rem;
+  right: -2rem;
+}
+
+.row3 {
+  position: absolute;
+  top: 24rem;
+  right: -8rem;
+}
+
+.row4 {
+  position: absolute;
+  top: 36rem;
+  right: -10rem;
+}
+
+.row5 {
+  position: absolute;
+  top: 48rem;
+  right: -8rem;
+}
+
+.Intro,
+.TopCourses {
+  background-color: #1d232a;
+  border-radius: 1rem;
+}
+
+.Intro_img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.Intro_part p,
+.Intro_Title p {
+  color: #ffffff;
+}
+
+.Intro_Title p {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.Intro_part {
+  padding-left: 10rem;
+}
+
+.Intro_part_title p {
+  font-size: 2rem;
+}
+
+.Intro_part_content p {
+  font-size: 1.5rem;
+}
+
+.Roadmap {
+  width: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.Roadmap_part {
+  margin: 0 2rem;
+  text-align: center;
+}
+
+.Roadmap_part_img > img {
+  width: 30rem;
+  height: 30rem;
+  border: 2px solid #df822c;
+  border-radius: 10px;
+  position: relative;
+}
+
+.number-step {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.6rem;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: -1.5rem;
+  left: 14.5rem;
+}
+
+.Roadmap_part_content p {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+.Roadmap_part_title p {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+.Roadmap_title p {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.TopCourses_title {
+  color: #fff;
+  text-align: center;
+  font-size: 5rem;
+  font-style: italic;
+  padding: 0 5rem;
+  vertical-align: auto;
+}
+
+.Course_img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  object-fit: cover;
+}
+
+.Course {
+  width: 100%;
+  height: 100%;
+}
+.Course_Content {
+  color: #fff;
+  height: auto;
+  background-color: #2c343a;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.Couse_author p,
+.Course_Length p {
+  font-size: 1.5rem;
+  color: #95999c;
+}
+.Course_Title p {
+  font-size: 2rem;
+}
+
+.TopCourses .Course {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.Courses {
+  padding: 0 10rem;
+}
+

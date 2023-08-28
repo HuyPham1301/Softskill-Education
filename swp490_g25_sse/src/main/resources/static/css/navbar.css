@@ -1,0 +1,185 @@
+.navbar1 {
+  width: 100%;
+  height: 8rem;
+  background-color: #1d232a;
+  padding: 2rem 4rem;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 2px 10px 2px #15191c;
+}
+
+.navbar1 .nav-list {
+  height: 100%;
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-list .item {
+  list-style: none;
+}
+
+.item>a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+.item>a:hover {
+  color: var(--primary-color);
+}
+
+.item:last-child {
+  margin-left: auto;
+  display: flex;
+  gap: 3rem;
+}
+
+.input-nav-group,
+.button-group {
+  position: relative;
+}
+
+.input-nav-group .search-icon {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 1.4rem;
+  left: 1rem;
+}
+
+.input-nav-group .search-input {  
+  width: 35rem;
+  height: 4.8rem;
+  padding: 2rem 4rem;  
+  /* border-radius: 0.8rem; */
+  border: none;
+  outline: none;
+  font-size: 2rem;
+}
+
+.dropdown-content {
+  width: 35rem;
+  font-size: 1.5rem;
+}
+
+.user-group {
+  width: 19rem;
+  height: 4.8rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.user-group:hover .user-img,
+.user-group:hover .user-name,
+.user-group:hover .user-icon {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+
+.user-group .user-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-group .user-name {
+  font-size: 1.6rem;
+  color: #95999c;
+}
+
+.user-group .user-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #fff;
+}
+
+.button-group .btn-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+}
+
+.btn-icon.signup {
+  color: #fff;
+  top: 1.6rem;
+  right: 2rem;
+}
+
+.btn-icon.signout {
+  color: #fff;
+  top: 1.6rem;
+  right: -1.8rem;
+}
+
+.btn-icon.course {
+  color: #fff;
+  top: 1.6rem;
+  right: 0.3rem;
+}
+
+.btn1 {
+  display: block;
+  width: 18rem;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  text-align: center;
+  border-radius: 0.8rem;
+  border: none;
+  font-size: 2.2rem;
+}
+
+.button-group:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-group:hover>a.btn1 {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-signup {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-signout {
+  background-color: none;
+  color: #fff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}

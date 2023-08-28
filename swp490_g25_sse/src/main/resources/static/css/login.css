@@ -1,0 +1,116 @@
+.form-login {
+  padding: 10rem 0;
+  border-bottom: 5px solid var(--primary-color);
+}
+
+.form-wrapper {
+  text-align: center;
+}
+
+.form-header {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 5.4rem;
+}
+.button-group {
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-field {
+  max-width: 60rem;
+  height: 7rem;
+  padding: 2rem 3rem;
+  font-size: 2.2rem;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: var(--primary-color);
+}
+
+.checkbox-input {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.checkbox-input > input[type="checkbox"],
+.checkbox-input > input[type="checkbox"]:checked {
+  appearance: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-input > input[type="checkbox"]:checked::before {
+  content: "✓";
+  font-size: 2.4rem;
+  color: var(--primary-color);
+  position: absolute;
+  top: -0.8rem;
+  right: 0;
+}
+
+.checkbox-input > label {
+  font-size: 2.2rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.btn-icon.signup {
+  color: #fff;
+  top: 1.5rem;
+  right: 1rem;
+}
+
+.register {
+  font-size: 2.2rem;
+  font-style: italic;
+}
+
+.register > a {
+  color: var(--primary-color);
+}
+
+.register > a:hover {
+  color: #aaa;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.alert-message {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  font-size: 2.2rem;
+}
+
+.success-message {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  font-size: 2.2rem;
+}

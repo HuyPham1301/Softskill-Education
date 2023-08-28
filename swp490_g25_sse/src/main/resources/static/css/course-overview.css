@@ -1,0 +1,107 @@
+.dashboard-content {
+  width: 100%;
+  padding: 4rem 8rem;
+  text-align: center;
+}
+
+.dashboard-content-wrapper {
+  text-align: center;
+}
+.week-title {
+  background-color: #c4c4c4;
+  width: 100%;
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.top-course {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  max-width: 1100px;
+}
+.img-title > span {
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+.img-title {
+  text-align: left;
+}
+.week-card {
+  margin-top: 3rem;
+  gap: 3rem;
+}
+
+.course-overview-img {
+  width: 100%;
+  border-radius: 10px;
+}
+.week-content {
+  background-color: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.content-title,
+.content-info {
+  font-size: 2rem;
+}
+
+.content-info {
+  display: flex;
+  align-items: center;
+  padding-left: 25rem;
+}
+.content-info span {
+  padding-right: 1rem;
+}
+
+.border-custom {
+  box-sizing: border-box;
+  border-right: 2px solid #bbadad;
+}
+.check-icon {
+  width: 25px;
+  height: 25px;
+}
+.completed {
+  color: #fff;
+  background-color: #1ab060;
+  border-radius: 50%;
+}
+
+.week-card {
+  background-color: white;
+  border-radius: 5px;
+  height: 207px;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.week-card > p {
+  padding: 10px;
+  background-color: #c4c4c4;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.week-card > div {
+  padding: 20px;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.week-card .left-div {
+  margin-left: 40px;
+}
+
+.week-card .right-div {
+  padding-left: 20px;
+  border-left: 1px solid #c4c4c4;
+}

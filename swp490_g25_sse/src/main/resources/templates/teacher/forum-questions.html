@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/system-screen.css" />
+  <link rel="stylesheet" href="/css/common-teacher-screen.css" />
+  <link rel="stylesheet" href="/css/forum-questions.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="row">
+    <div th:replace="fragments/teacher-sidebar"></div>
+
+    <!-- NAVBAR FOR USER -->
+    <div th:replace="fragments/navbar"></div>
+    <main class="main-dashboard col-10 p-0">
+      <div class="dashboard-wrapper">
+        <p class="dashboard-header">Diễn đàn câu hỏi</p>
+        <!-- <a th:href="@{/app/forum/creat/{id}(id=${course.id})}" class="create-btn-wrapper"><button
+            class="create-btn">Create post</button></a> -->
+        <div class="dashboard-container">
+          <div class="tabs-header">
+            <a>Bài đăng</a>
+            <!-- <a href="#">Phân loại</a> -->
+          </div>
+          <th:block th:each="question : ${questions}">
+            <div class="question-wrapper">
+              <div class="question-info">
+                <div class="info-wrapper">
+                  <div class="user">
+                    <img th:src="${question.student.user.imageURL}" />
+                  </div>
+                  <div class="more-info">
+                    <a th:href="@{'/app/forum/answer/course/' + ${course.id} + '/question/' + ${question.id} }"
+                      class="question" th:utext="${question.title}"></a>
+                    <div class="date" th:utext="${question.student.user.firstName}"></div>
+                  </div>
+                </div>
+                <div class="topic" th:utext="${question.tag}"></div>
+              </div>
+              <div class="question-content" th:utext="${question.content}">
+              </div>
+              <div class="question-details">
+                <div class="reactions">
+                  <div class="react">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                        clip-rule="evenodd" />
+                    </svg>                    
+                    <span>1.45k</span>
+                  </div>
+                  <div class="react">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span>1.45k</span>
+                  </div>
+                  <div class="react">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd"
+                        d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span>1.45k</span>
+                  </div>
+                </div>
+                <div class="react report">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <a href="#">Báo cáo</a>
+                </div>
+              </div>
+            </div>
+          </th:block>
+
+        </div>
+      </div>
+    </main>
+    <input type="hidden" value="forum" id="sidebarLocation"/>
+  </div>
+
+  <script src="/javascript/sidebar-active.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+  // add active class when clicking the menucourse
+  const menus = document.querySelectorAll(".item-wrapper");
+  for (const menu of menus) {
+    menu.addEventListener("click", () => {
+      const tab = document.querySelector(".active");
+      if (tab) {
+        tab.classList.remove("active");
+      }
+      menu.classList.add("active");
+    });
+  }
+</script>
+
+</html>

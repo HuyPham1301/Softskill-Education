@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/system-screen.css" />
+  <link rel="stylesheet" href="/css/course-screen.css" />
+  <link rel="stylesheet" href="/css/course-information.css" />
+  <link rel="stylesheet" href="/css/course-overview.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="row">
+    <div th:replace="fragments/student-course-learn-sidebar"></div>
+
+    <!-- NAVBAR FOR USER -->
+    <div th:replace="fragments/navbar"></div>
+
+    <div class="col-2"></div>
+    <main class="col-10 main-dashboard content-padding">
+      <div class="row">
+        <div class="col-9">
+          <div>
+            <img th:src="${course.imageUrl}" class="img" />
+            <div class="course-title pt-4">
+              <span th:text="${course.title}"></span>
+
+              <th:block th:each="course : ${courseOverview}">
+                <div class="week-card">
+                  <p th:text="${course.week}">Tuan 1</p>
+                  <div>
+                    <div class="left-div" style="width: 50%; float:left">
+                      <p>Bài học đã hoàn thành</p>
+                      <p>Bài kiểm tra đã hoàn thành</p>
+                    </div>
+                    <div class="right-div" style="width: 40%; float:right">
+                      <p th:text="${course.finishedLecture + '/' + course.totalLecture  + ' Bài'}">0/2 Bài</p>
+                      <p th:text="${course.finishedTest + '/' + course.totalTest  + ' Bài'}">0/2 Bài</p>
+                    </div>
+                  </div>
+                </div>
+              </th:block>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <input type="hidden" value="overview" id="sidebarLocation"/>
+  </div>
+
+  <script src="/javascript/sidebar-active.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+  const menus = document.querySelectorAll(".item-wrapper");
+  for (const menu of menus) {
+    menu.addEventListener("click", () => {
+      const tab = document.querySelector(".active");
+      if (tab) {
+        tab.classList.remove("active");
+      }
+      menu.classList.add("active");
+    });
+  }
+</script>
+
+<script th:inline="javascript">
+  /*<![CDATA[*/
+  var firstName = /*[[${course.teacher.user.firstName}]]*/ 'value';
+  var lastName = /*[[${course.teacher.user.lastName}]]*/ 'value';
+
+  var fullName = firstName + " " + lastName;
+  console.log(fullName);
+  document.getElementById("fullName").textContent = fullName;
+  /*]]>*/
+</script>
+
+</html>

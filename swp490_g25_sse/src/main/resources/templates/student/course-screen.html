@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/system-screen.css" />
+  <link rel="stylesheet" href="/css/course-screen.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="row">
+    <div th:replace="fragments/student-course-list-sidebar"></div>
+    <!-- NAVBAR FOR USER -->
+    <div th:replace="fragments/navbar"></div>
+    <main class="main-dashboard col-10 p-0">
+      <div class="dashboard-content row">
+        <div class="col-12 p-0">
+          <div class="dashboard-content-wrapper">
+            <div class="content-main-img">
+              <img class="img-fluid" src="/images/list-course-main-img.png" />
+            </div>
+            <!-- <div class="content-main-des">
+              <span class="first-des">Nhiều thứ đang chờ bạn</span>
+              <span class="second-des">Tham gia cùng chúng tôi</span>
+              <span class="something-des">Something here</span>
+              <a href="#" class="see-more-des">Xem thêm</a>
+            </div> -->
+
+            <div class="top-course">
+              <span>Danh sách các khóa học</span>
+            </div>
+            
+            <div class="course-list">
+              <th:block th:each="course : ${allCourses}">
+                <a th:href="@{/app/student/course/{id}(id=${course.id})}">
+                  <div class="course-card">
+                    <div class="course-card-img">
+                      <img th:src="${course.courseImgUrl}" class="course-img" />
+                    </div>
+                    <div class="course-card-owner-img">
+                      <img th:src="${course.teacher.user.imageURL}" class="owner-img" />
+                    </div>
+                    <div class="course-detail">
+                      <div class="owner-name" id="owner-name"
+                        th:text="${course.teacher.user.firstName} + ' ' + ${course.teacher.user.lastName}"></div>
+                      <p class="course-name" th:utext="${course?.courseTitle}"></p>
+                      <div class="course-views">                                             
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </th:block>
+            </div>
+            
+            <div class="top-course">
+              <span>Top Khóa học có nhiều lượt học</span>
+            </div>
+
+            <div class="course-list">
+              <th:block th:each="course : ${mostLearnCourses}">
+                <a th:href="@{/app/student/course/{id}(id=${course.id})}">
+                  <div class="course-card">
+                    <div class="course-card-img">
+                      <img th:src="${course.courseImgUrl}" class="course-img" />
+                    </div>
+                    <div class="course-card-owner-img">
+                      <img th:src="${course.teacher.user.imageURL}" class="owner-img" />
+                    </div>
+                    <div class="course-detail">
+                      <div class="owner-name" id="owner-name"
+                        th:text="${course.teacher.user.firstName} + ' ' + ${course.teacher.user.lastName}"></div>
+                      <p class="course-name" th:utext="${course?.courseTitle}"></p>
+                      <div class="course-views">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="views-icon" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span class="view-amount" th:text="${course?.totalEnrolls + ' Lượt học'}"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </th:block>
+            </div>
+
+            <div class="top-course">
+              <span>Top Khóa học có lượt đánh giá cao</span>
+            </div>
+
+            <div class="course-list">
+              <th:block th:each="course : ${bestFeedbackCourses}">
+                <a th:href="@{/app/student/course/{id}(id=${course.id})}">
+                  <div class="course-card">
+                    <div class="course-card-img">
+                      <img th:src="${course.courseImgUrl}" class="course-img" />
+                    </div>
+                    <div class="course-card-owner-img">
+                      <img th:src="${course.teacher.user.imageURL}" class="owner-img" />
+                    </div>
+                    <div class="course-detail">
+                      <div class="owner-name" id="owner-name"
+                        th:text="${course.teacher.user.firstName} + ' ' + ${course.teacher.user.lastName}"></div>
+                      <p class="course-name" th:utext="${course?.courseTitle}"></p>
+                      <div class="course-views">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="views-icon" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span class="view-amount" th:text="${'điểm đánh giá: ' + course?.feedbackRating}"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </th:block>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <input type="hidden" value="listCourse" id="sidebarLocation"/>
+  </div>
+
+  <script src="/javascript/sidebar-active.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+  const menus = document.querySelectorAll(".item-wrapper");
+  for (const menu of menus) {
+    menu.addEventListener("click", () => {
+      const tab = document.querySelector(".active");
+      if (tab) {
+        tab.classList.remove("active");
+      }
+      menu.classList.add("active");
+    });
+  }
+</script>
+
+
+</html>

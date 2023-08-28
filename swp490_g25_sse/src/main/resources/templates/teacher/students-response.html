@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/system-screen.css" />
+  <link rel="stylesheet" href="/css/common-teacher-screen.css" />
+  <link rel="stylesheet" href="/css/students-response.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="overlay" class="row">
+    <div th:replace="fragments/teacher-sidebar"></div>
+
+    <!-- NAVBAR FOR USER -->
+    <div th:replace="fragments/navbar"></div>
+    <main class="main-dashboard col-10 p-0">
+      <div class="dashboard-wrapper">
+        <p class="dashboard-header">Danh sách feedback</p>
+        <div class="dashboard-container">
+          <table class="table">
+            <thead>
+               <tr>                
+                <th scope="col" class="title-header">Khóa học</th>
+                <th scope="col" class="created-header">Người feedback</th>
+                <th scope="col" class="rate-header">Đánh giá</th>
+                <th scope="col" class="content-header">Nội dung đánh giá</th>              
+                <th scope="col" class="improve-header">Phân loại đánh giá</th>              
+               </tr> 
+            </thead>
+            <tbody>
+              <th:block th:each="feedback : ${feedbacks}">
+                <tr>
+                  <td class="title" th:utext="${feedback.course.title}"></td>
+                  <td class="created" th:utext="${feedback.student.user.firstName} + ' ' +
+                      ${feedback.student.user.lastName}"></td>
+                  <td class="rate" th:utext="${feedback.rating}"></td>
+                  <td class="improve" th:utext="${feedback.content}"></td>
+                  <td class="improve" th:utext="${feedback.contentKey}"></td>
+                </tr>
+              </th:block>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+  // add active class when clicking the menu
+  const menus = document.querySelectorAll(".item-wrapper");
+  for (const menu of menus) {
+    menu.addEventListener("click", () => {
+      const tab = document.querySelector(".active");
+      if (tab) {
+        tab.classList.remove("active");
+      }
+      menu.classList.add("active");
+    });
+  }
+
+  // click to delete row
+  const icons = document.querySelectorAll(".checkbox-icon");
+  for (const icon of icons) {
+    icon.addEventListener("click", (e) => {
+      e.target.closest("tr").remove();
+    });
+  }
+
+  // click to delete row checked
+  function deleteRow() {
+    const selectAll = document.querySelector(".select-all");
+    if (selectAll.checked) {
+      document.querySelectorAll("table tbody tr").forEach(function (e) {
+        e.remove();
+      });
+      return;
+    }
+    document.querySelectorAll(".table .select:checked").forEach((e) => {
+      e.closest("tr").remove();
+    });
+  }
+</script>
+
+</html>

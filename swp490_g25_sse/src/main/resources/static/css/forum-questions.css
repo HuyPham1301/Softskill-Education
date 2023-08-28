@@ -1,0 +1,116 @@
+.tabs-header {
+  display: flex;
+  gap: 3rem;
+}
+
+.tabs-header > a {
+  color: #000;
+  font-size: 3.6rem;
+}
+
+.tabs-header > a:hover {
+  text-decoration: none;
+}
+
+.question-wrapper {
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-bottom: 2px solid #000;
+}
+
+.question-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.info-wrapper .user > img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.info-wrapper .more-info .question {
+  color: #0480dc;
+  font-size: 3.6rem;
+}
+
+.info-wrapper .more-info .date {
+  color: #95999c;
+  font-size: 2.4rem;
+}
+
+.question-info .topic {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.question-content {
+  color: #000;
+  font-size: 1.6rem;
+}
+
+.question-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-details .reactions {
+  color: #0480dc;
+  display: flex;
+  gap: 2rem;
+}
+
+.reactions .react {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.react > svg {
+  color: #0480dc;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.react > a {
+  color: #0480dc;
+  font-size: 1.6rem;
+}
+
+.react > a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.create-btn-wrapper {
+  text-decoration: none;
+}
+
+.create-btn {
+  float: right;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-size: 2.4rem;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+  transform: translateY(4px);
+}
+
+.question-content {
+  white-space: pre-wrap;
+}
